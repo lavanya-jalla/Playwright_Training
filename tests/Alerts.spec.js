@@ -2,8 +2,9 @@ import{test,expect}from'@playwright/test';
 test.describe('Alerts Handling',()=>{
     test('Handle alerts',async({page})=>{
             await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
-
+            await page.getByRole('placeholder', { name:'Enter Your Name'}).fill('Lavanya');
             page.on('dialog',async dialog=>{
+                
                 console.log(dialog.message());
                 dialog.accept();
             })
@@ -15,6 +16,7 @@ test.describe('Alerts Handling',()=>{
 
 test('confirm and dismiss alerts fail test',async({page})=>{
             await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
+             await page.getByRole('placeholder', { name:'Enter Your Name'}).fill('Lavanya');
 
             page.on('dialog',async dialog=>{
                 console.log(dialog.message());
@@ -32,6 +34,7 @@ test('confirm and dismiss alerts fail test',async({page})=>{
 });
 test.only('confirm and dismiss alerts pass test',async({page})=>{
             await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
+             await page.getByPlaceholder('Enter Your Name').fill('Lavanya');
 
             page.once('dialog',async dialog=>{
                 console.log(dialog.message());
