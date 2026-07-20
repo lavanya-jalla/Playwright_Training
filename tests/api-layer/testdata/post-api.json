@@ -1,0 +1,12 @@
+{
+"booksCreationApiPayload":{
+    
+  "id": 103,
+  "title": "playwright 103",
+  "description": "Testing 103",
+  "pageCount": 200,
+  "excerpt": "Testing 103",
+  "publishDate": "2026-07-12T04:59:58.678Z"
+
+}
+}
